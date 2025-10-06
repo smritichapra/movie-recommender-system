@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 
 # Load saved movie list and similarity matrix
-movies = pickle.load(open('movie_list.pkl', 'rb'))
+movies = pickle.load(open('movies.pkl', 'rb'))
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 def recommend(movie):

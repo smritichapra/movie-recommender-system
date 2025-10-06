@@ -1,20 +1,32 @@
 import pickle
 import streamlit as st
+import requests
+import pandas as pd
 
-# Load saved movie list and similarity matrix
+# --- Load movie list (local file or same repo) ---
 movies = pickle.load(open('movies.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
 
+# --- Load similarity matrix directly from GitHub ---
+url = "https://github.com/smritichapra/movie-recommender-system/releases/download/v1.0/similarity.pkl"
+
+@st.cache_data(show_spinner=False)
+def load_similarity():
+    response = requests.get(url)
+    return pickle.loads(response.content)
+
+similarity = load_similarity()
+
+# --- Recommendation Function ---
 def recommend(movie):
     index = movies[movies['title'] == movie].index[0]
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
     recommended_movie_names = [movies.iloc[i[0]].title for i in distances[1:6]]
     return recommended_movie_names
 
-# Streamlit UI
+# --- Streamlit UI ---
 st.set_page_config(page_title="Movie Recommender", layout="wide")
 
-# Gradient background & heading style
+# --- Styling ---
 st.markdown(
     """
     <style>
@@ -66,19 +78,19 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 
-# Movie selection
+# --- Movie selection ---
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
     "Type or select a movie from the dropdown",
     movie_list
 )
 
+# --- Recommendations ---
 if st.button('Show Recommendation'):
     recommended_movie_names = recommend(selected_movie)
 
     st.markdown("<h3 style='color:#ffbd59;'>Top 5 Recommended Movies:</h3>", unsafe_allow_html=True)
 
-    # Display movies in columns with gradient cards
     cols = st.columns(5)
     gradient_colors = [
         "linear-gradient(135deg, #ff4b4b, #ff758c)",
@@ -97,3 +109,4 @@ if st.button('Show Recommendation'):
             """,
             unsafe_allow_html=True
         )
+

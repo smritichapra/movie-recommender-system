@@ -1,51 +1,64 @@
-🎬 Content-Based Movie Recommender System:
-A Content-Based Movie Recommender System built using Python, scikit-learn, and Streamlit.This application recommends movies similar to a selected title by analyzing movie content features like genres, keywords, cast, and descriptions.The system leverages Cosine Similarity and K-Nearest Neighbors (KNN) algorithms to compute similarity scores between movies and deliver personalized recommendations.
+# 🎬 Content-Based Movie Recommender System
 
-🚀 Features:
-🎯 Content-Based Filtering — Recommends movies based on feature similarity (genres, cast, overview, etc.)
-💡 Cosine Similarity & KNN — Measures closeness between movies using NLP and vectorization techniques
-🧠 Data Preprocessing — Cleaned and vectorized movie metadata for efficient model performance
-🌐 Streamlit Web App — Interactive, user-friendly web interface for real-time recommendations
-💾 Model Persistence — Pickle used for saving/loading preprocessed data and trained models
+A **Content-Based Movie Recommender System** built using **Python**, **scikit-learn**, and **Streamlit**.  
+This system recommends movies similar to a selected title by analyzing content features like **genres**, **keywords**, **cast**, and **description**.  
 
-📊 Dataset:
-Source: TMDb Movie Metadata Dataset
+The system leverages **Cosine Similarity** and **K-Nearest Neighbors (KNN)** algorithms to compute similarity scores and deliver personalized recommendations.
 
-🛠️ Tech Stack & Libraries:
-Programming Language: Python 3.x
-Libraries Used:
-pandas → Data cleaning & manipulation
-numpy → Numerical computations
-scikit-learn → Cosine similarity, KNN, feature vectorization
-streamlit → Web application framework
-pickle → Model serialization and deserialization
+---
 
-⚙️ How It Works:
-Data Preprocessing->Clean and combine relevant columns (genres, keywords, cast, overview) into a single textual feature.
-Feature Extraction->Use TF-IDF Vectorization or CountVectorizer to transform movie metadata into numerical vectors.
-Similarity Computation->Compute Cosine Similarity or KNN distance matrix between movie vectors.
-Recommendation Generation->Retrieve top 5 movies with the highest similarity scores to the selected movie.
-Streamlit Interface->Display recommendations interactively through a clean and responsive UI.
+## 🚀 Features
 
-💻 Installation & Setup:
-1️⃣ Clone the Repository
+- 🎯 **Content-Based Filtering:** Recommends movies based on similarity of their metadata.  
+- 💡 **Cosine Similarity & KNN:** Measures closeness between movies using NLP and feature vectors.  
+- 🧠 **Data Preprocessing:** Cleaned and combined relevant columns for effective modeling.  
+- 🌐 **Streamlit Web App:** Interactive, user-friendly web interface.  
+- 💾 **Model Persistence:** Pickle used for saving/loading preprocessed data and trained models.
+
+---
+
+## 📊 Dataset
+
+**Source:** [TMDb Movie Metadata Dataset](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
+
+### Included Data Features
+
+| Feature | Description |
+|----------|-------------|
+| `title` | Movie name |
+| `genres` | Movie genres/categories |
+| `overview` | Short description or summary |
+| `keywords` | Key phrases describing the movie |
+| `cast` | Lead actors/actresses |
+
+---
+
+## 🛠️ Tech Stack & Libraries
+
+- **Programming Language:** Python 3.x  
+- **Libraries Used:**
+  - `pandas` → Data manipulation  
+  - `numpy` → Numerical computations  
+  - `scikit-learn` → Cosine similarity, KNN, vectorization  
+  - `streamlit` → Web app interface  
+  - `pickle` → Model serialization and loading
+
+---
+
+## ⚙️ How It Works
+
+1. **Data Preprocessing:** Clean and merge `genres`, `keywords`, `cast`, and `overview` columns.  
+2. **Feature Extraction:** Use `CountVectorizer` or `TF-IDF Vectorizer` to transform text into numerical vectors.  
+3. **Similarity Computation:** Compute similarity matrix using **Cosine Similarity** or **KNN**.  
+4. **Recommendation Generation:** Retrieve top N most similar movies to the selected one.  
+5. **Streamlit Interface:** Interactive UI to display recommendations.
+
+---
+
+## 💻 Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/yourusername/content-based-movie-recommender.git
 cd content-based-movie-recommender
-
-2️⃣ Install Dependencies
-pip install -r requirements.txt
-
-3️⃣ Run the Streamlit App
-streamlit run app.py
-
-🧩 Project Structure:
-├── app.py                   # Streamlit main application
-├── movie_recommender.ipynb  # Jupyter notebook for model training
-├── movies.csv               # TMDb movie dataset
-├── similarity.pkl           # Precomputed similarity matrix
-├── movies_dict.pkl          # Serialized movie metadata
-├── requirements.txt         # Required Python packages
-└── README.md                # Project documentation
-
-🎥 Demo:
 

@@ -50,7 +50,7 @@ The system leverages **Cosine Similarity** and **K-Nearest Neighbors (KNN)** alg
 1. **Data Preprocessing:** Clean and merge `genres`, `keywords`, `cast`, and `overview` columns.  
 2. **Feature Extraction:** Use `CountVectorizer` or `TF-IDF Vectorizer` to transform text into numerical vectors.  
 3. **Similarity Computation:** Compute similarity matrix using **Cosine Similarity** or **KNN**.  
-4. **Recommendation Generation:** Retrieve top N most similar movies to the selected one.  
+4. **Recommendation Generation:** Retrieve top 5 most similar movies to the selected one.  
 5. **Streamlit Interface:** Interactive UI to display recommendations.
 
 ---
@@ -61,4 +61,9 @@ The system leverages **Cosine Similarity** and **K-Nearest Neighbors (KNN)** alg
 ```bash
 git clone https://github.com/yourusername/content-based-movie-recommender.git
 cd content-based-movie-recommender
+
+---
+## 🎥 Demo
+
+![App Demo](assets/demo.png)
 

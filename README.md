@@ -54,6 +54,11 @@ The system leverages **Cosine Similarity** and **K-Nearest Neighbors (KNN)** alg
 5. **Streamlit Interface:** Interactive UI to display recommendations.
 
 ---
+## 🎥 Demo
+
+![App Demo](assets/demo.png)
+
+---
 
 ## 💻 Installation & Setup
 
@@ -62,8 +67,5 @@ The system leverages **Cosine Similarity** and **K-Nearest Neighbors (KNN)** alg
 git clone https://github.com/yourusername/content-based-movie-recommender.git
 cd content-based-movie-recommender
 
----
-## 🎥 Demo
 
-![App Demo](assets/demo.png)
 

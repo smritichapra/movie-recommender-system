@@ -56,7 +56,7 @@ The system leverages **Cosine Similarity** and **K-Nearest Neighbors (KNN)** alg
 ---
 ## 🎥 Demo
 
-![App Demo](assets/demo.png)
+![App Demo](Screenshot (1125).png)
 
 ---
 

@@ -49,4 +49,3 @@ streamlit run app.py
 
 🎥 Demo:
 
-
